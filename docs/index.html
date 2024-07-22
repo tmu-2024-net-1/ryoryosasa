@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字の海</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      min-height: 2000px; /* スクロールのために高さを設定 */
+      overflow-x: hidden; /* 横スクロールバーを隠す */
+      background: linear-gradient(to bottom, #add8e6, #00008b, #000); /* 背景グラデーション */
+    }
+    .w-full {
+      width: 100%;
+      text-align: center;
+      padding: 0; /* パディングを削除 */
+      position: relative;
+      z-index: 1;
+    }
+    .text-2xl {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    #container {
+      display: flex;
+      flex-direction: column;
+      padding: 0; /* パディングを削除 */
+      margin: 0; /* マージンを削除 */
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap; /* はみ出さないように折り返す */
+      justify-content: center; /* 中央揃え */
+    }
+    .char {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: bold;
+      transition: all 1s;
+      background: none; /* 背景を無効にする */
+    }
+    footer {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 0.9em;
+      color: white; /* フッターの文字を白くする */
+      position: relative;
+      z-index: 2;
+    }
+    .bg-black {
+      background-color: black;
+    }
+    .text-white {
+      color: white;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="w-full">
+    <h1 class="text-2xl">文字の海</h1>
+    <div id="container" class="flex flex-col"></div>
+    <footer>
+      <div>by Ryotaro Sasaki</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -39,30 +39,3 @@ function createRows() {
 
 createRows(); // 初期表示
 window.addEventListener('resize', createRows); // ウィンドウサイズ変更時に再生成
-
-document.addEventListener('scroll', function() {
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollFraction = window.scrollY / maxScroll;
-
-  const startColor = { r: 173, g: 216, b: 230 }; // 薄い水色
-  const midColor = { r: 0, g: 0, b: 139 }; // 暗い青色
-  const endColor = { r: 0, g: 0, b: 0 }; // 黒色
-
-  function interpolateColor(start, end, factor) {
-    const result = {};
-    for (const key in start) {
-      result[key] = Math.round(start[key] + factor * (end[key] - start[key]));
-    }
-    return result;
-  }
-
-  let currentColor;
-  if (scrollFraction < 0.5) {
-    currentColor = interpolateColor(startColor, midColor, scrollFraction * 2);
-  } else {
-    currentColor = interpolateColor(midColor, endColor, (scrollFraction - 0.5) * 2);
-  }
-
-  const colorString = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`;
-  document.body.style.backgroundColor = colorString;
-});

@@ -6,20 +6,21 @@
   <title>文字の海</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "MS Mincho", "Hiragino Mincho Pro", "Serif", serif; /* 明朝体フォントに変更 */
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       min-height: 2000px; /* スクロールのために高さを設定 */
       overflow-x: hidden; /* 横スクロールバーを隠す */
-      background: linear-gradient(to bottom, #add8e6, #00008b, #000); /* 背景グラデーション */
+      background-color: white; /* 背景を白に変更 */
     }
     .w-full {
       width: 100%;
       text-align: center;
-      padding: 0; /* パディングを削除 */
+      padding: 0;
       position: relative;
       z-index: 1;
+      margin-top: 50px; /* タイトルの上に余白を追加 */
     }
     .text-2xl {
       font-size: 2em;
@@ -33,8 +34,8 @@
     }
     .row {
       display: flex;
-      flex-wrap: wrap; /* はみ出さないように折り返す */
-      justify-content: center; /* 中央揃え */
+      flex-wrap: nowrap; /* 折り返さない */
+      justify-content: space-between; /* 文字を両端に広げる */
     }
     .char {
       display: inline-block;
@@ -50,7 +51,7 @@
       margin-top: 20px;
       padding: 10px;
       font-size: 0.9em;
-      color: white; /* フッターの文字を白くする */
+      color: black; /* フッターの文字を黒くする */
       position: relative;
       z-index: 2;
     }

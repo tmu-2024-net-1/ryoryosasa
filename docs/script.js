@@ -1,4 +1,4 @@
-const chars = '　～一ニ三七万川牛王木竹示目耳虍羊花音鳥馬籠魚織魚器図漢鬱藝'.split('');
+const chars = '　～一二三七万川牛王木竹示目耳虍羊花音鳥馬籠魚織魚器図漢鬱藝'.split('');
 const container = document.querySelector('#container');
 
 function createRows() {
